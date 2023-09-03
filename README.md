@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Copyright Notice
+
+This software is the property of Khaled AL Asadi and is protected by copyright law. All rights are reserved. Unauthorized use, copying, modification, or distribution of this software is strictly prohibited without the express written consent of Khaled Al Asadi.
+
+For inquiries regarding the use of this software, please contact khelo.asadi1998@gmail.com.
