@@ -4,7 +4,6 @@ import { Observable, of } from 'rxjs';
 import { selectCountries, selectLoading } from '../store/country.selectors';
 import * as CountryActions from '../store/country.actions';
 import { PageEvent } from '@angular/material/paginator';
-import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-countries',
@@ -19,7 +18,7 @@ export class CountriesComponent {
   public itemsPerPage = 10;
   totalCountries: number = 0;
 
-  constructor(private store: Store, private router: Router) {
+  constructor(private store: Store) {
     this.country$ = this.store.select(selectCountries);
     this.loading$ = this.store.select(selectLoading);
   }
