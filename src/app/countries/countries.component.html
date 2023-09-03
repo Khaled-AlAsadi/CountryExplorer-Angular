@@ -9,7 +9,9 @@
       <mat-card-subtitle>{{ country.name.official }}</mat-card-subtitle>
     </mat-card-header>
     <div class="card-image-container">
-      <img class="card-image" [src]="country.flags.svg" alt="Country Flag">
+      <div class="image-wrapper">
+        <img class="card-image" [src]="country.flags.svg" alt="Country Flag">
+      </div>
     </div>
     <mat-card-content>
       <p>Capital: {{ country.capital }}</p>
