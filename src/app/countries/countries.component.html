@@ -1,21 +1,24 @@
-<mat-card *ngFor="let country of (country$ | async)?.slice(startIndex, endIndex)" class="example-card">
-  <mat-card-header>
-    <mat-card-title>{{ country.name.common }}</mat-card-title>
-    <mat-card-subtitle>{{ country.name.official }}</mat-card-subtitle>
-  </mat-card-header>
-  <div class="card-image-container">
-    <img class="card-image" [src]="country.flags.svg" alt="Country Flag">
-  </div>
-  <mat-card-content>
-    <p>Capital: {{ country.capital }}</p>
-    <p>Region: {{ country.region }}</p>
-    <p>Languages:</p>
-    <ul>
-      <li *ngFor="let language of getObjectKeys(country.languages)">{{
-        country.languages[language] }}</li>
-    </ul>
-  </mat-card-content>
-</mat-card>
+<mat-progress-spinner *ngIf="loading$ | async; else countriesData" mode="indeterminate"></mat-progress-spinner>
 
-<mat-paginator [length]="totalCountries" [pageSize]="10" (page)="onPageChange($event)"
-  aria-label="Select page"></mat-paginator>
+<ng-template #countriesData>
+  <mat-card *ngFor="let country of (country$ | async)?.slice(startIndex, endIndex)" class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{ country.name.common }}</mat-card-title>
+      <mat-card-subtitle>{{ country.name.official }}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="card-image-container">
+      <img class="card-image" [src]="country.flags.svg" alt="Country Flag">
+    </div>
+    <mat-card-content>
+      <p>Capital: {{ country.capital }}</p>
+      <p>Region: {{ country.region }}</p>
+      <p>Languages:</p>
+      <ul>
+        <li *ngFor="let language of getObjectKeys(country.languages)">{{
+          country.languages[language] }}</li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+  <mat-paginator [length]="totalCountries" [pageSize]="10" (page)="onPageChange($event)"
+    aria-label="Select page"></mat-paginator>
+</ng-template>

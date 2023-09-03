@@ -4,14 +4,14 @@ import { CountryState } from './country.reducer';
 export const selectCountryState =
   createFeatureSelector<CountryState>('country');
 
-export const selectCountries = createSelector(
-  selectCountryState,
-  (state) => state.countries
-);
-
 export const selectLoading = createSelector(
   selectCountryState,
   (state) => state.loading
+);
+
+export const selectCountries = createSelector(
+  selectCountryState,
+  (state) => state.countries
 );
 
 export const selectError = createSelector(

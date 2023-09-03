@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -31,6 +31,7 @@ import { CountryEffects } from './store/country.effects';
     HttpClientModule,
     MatToolbarModule,
     MatIconModule,
+    MatProgressSpinnerModule,
     MatCardModule,
     StoreModule.forRoot({ country: countryReducer }),
     EffectsModule.forRoot([CountryEffects]),
