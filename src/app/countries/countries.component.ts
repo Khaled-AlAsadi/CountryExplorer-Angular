@@ -13,7 +13,7 @@ import { PageEvent } from '@angular/material/paginator';
 export class CountriesComponent {
   country$: Observable<any[]>;
   public loading$: Observable<boolean> = of(true);
-
+  errorMessage: string = '';
   public currentPage = 1;
   public itemsPerPage = 10;
   totalCountries: number = 0;
@@ -28,13 +28,15 @@ export class CountriesComponent {
 
     this.country$.subscribe(
       (data) => {
-        console.log('Emitted Data:', data);
         this.totalCountries = data.length;
         this.loading$ = of(false);
+        this.errorMessage = '';
       },
       (error) => {
         console.error('Error:', error);
         this.loading$ = of(false);
+        this.errorMessage =
+          'An error occurred while fetching data. Please try again later.';
       }
     );
   }

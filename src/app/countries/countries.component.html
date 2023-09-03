@@ -1,6 +1,8 @@
 <mat-progress-spinner *ngIf="loading$ | async; else countriesData" mode="indeterminate"></mat-progress-spinner>
 
 <ng-template #countriesData>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
   <mat-card *ngFor="let country of (country$ | async)?.slice(startIndex, endIndex)" class="example-card">
     <mat-card-header>
       <mat-card-title>{{ country.name.common }}</mat-card-title>
