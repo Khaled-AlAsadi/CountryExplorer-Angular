@@ -1,9 +1,10 @@
 .card-image-container {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
   background-color: #f5f5f5;
   padding: 8px;
+  overflow: hidden;
 }
 .example-card {
   margin-bottom: 16px;
@@ -23,6 +24,7 @@
   max-width: 100%;
   height: auto;
   object-fit: contain;
+  overflow: hidden;
 }
 .example-card:last-child {
   border-bottom: none;
