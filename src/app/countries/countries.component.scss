@@ -1,10 +1,11 @@
 .card-image-container {
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
   background-color: #f5f5f5;
   padding: 8px;
   overflow: hidden;
+  box-sizing: border-box;
 }
 .example-card {
   margin-bottom: 16px;
