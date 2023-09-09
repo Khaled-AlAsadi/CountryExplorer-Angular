@@ -7,6 +7,15 @@
 
 .header-title {
   grid-column: 1 / span 2;
+  margin-bottom: 8px; /* Add margin to push the title down */
+
+  a{
+    color: white;
+    position: relative;
+  }
+  a:hover{
+    text-decoration: none;
+  }
 }
 
 .header-search {
