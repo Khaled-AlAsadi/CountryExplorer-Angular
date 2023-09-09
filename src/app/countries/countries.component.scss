@@ -49,3 +49,7 @@
 .country-link:hover {
   text-decoration: none;
 }
+
+.country-link:focus {
+  outline: 2px solid #007bff;
+}
