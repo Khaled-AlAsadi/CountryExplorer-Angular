@@ -1,0 +1,25 @@
+<div class="country-detail-container" *ngIf="country">
+  <a class="back-button" (click)="goBack()">Back to Countries</a>
+
+  <h1>{{ country.name?.common }}</h1>
+  <div class="country-info">
+    <div class="flag">
+      <img [src]="country.flags?.png" alt="Country Flag" />
+    </div>
+    <div class="country-details">
+      <p><strong>Official Name:</strong> {{ country.name?.official }}</p>
+      <p><strong>Capital:</strong> {{ country.capital?.[0] }}</p>
+      <p><strong>Region:</strong> {{ country.region }}</p>
+      <p><strong>Subregion:</strong> {{ country.subregion }}</p>
+      <p><strong>Population:</strong> {{ country.population | number }}</p>
+      <p><strong>Languages:</strong></p>
+      <ul>
+        <li *ngFor="let language of getObjectKeys(country.languages)">{{ country.languages[language] }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="country-links">
+    <a href="{{ country.maps?.googleMaps }}" target="_blank">View on Google Maps</a>
+    <a href="{{ country.maps?.openStreetMaps }}" target="_blank">View on OpenStreetMap</a>
+  </div>
+</div>

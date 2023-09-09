@@ -5,7 +5,9 @@
 
   <mat-card *ngFor="let country of (country$ | async)?.slice(startIndex, endIndex)" class="example-card">
     <mat-card-header>
-      <mat-card-title>{{ country.name.common }}</mat-card-title>
+      <mat-card-title>
+        <div class="country-link" (click)="goToCountryDetail(country.name.common)">{{ country.name.common }}</div>
+      </mat-card-title>
       <mat-card-subtitle>{{ country.name.official }}</mat-card-subtitle>
     </mat-card-header>
     <div class="card-image-container">
@@ -23,6 +25,12 @@
       </ul>
     </mat-card-content>
   </mat-card>
-  <mat-paginator [length]="totalCountries" [pageSize]="10" (page)="onPageChange($event)"
-    aria-label="Select page"></mat-paginator>
+
+  <mat-paginator 
+  [length]="totalCountries" 
+  [pageSize]="10" 
+  (page)="onPageChange($event)"
+  aria-label="Select page">
+</mat-paginator>
+
 </ng-template>

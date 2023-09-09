@@ -1,3 +1,19 @@
-<mat-toolbar color="primary">
-  <h1>CountryExplorer</h1>
+<mat-toolbar color="primary" class="header">
+  <div class="header-content">
+    <div class="header-title">
+      <a href="#">
+        <h1>CountryExplorer</h1>
+      </a>
+    </div>
+  </div>
+  
+  <mat-form-field class="header-search">
+    <input type="text" placeholder="Search" matInput [formControl]="searchControl" [matAutocomplete]="auto" />
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayCountry"
+      (optionSelected)="onCountrySelected($event)">
+      <mat-option *ngFor="let country of filteredCountries" [value]="country.name.common">
+        {{ country.name.common }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
 </mat-toolbar>
